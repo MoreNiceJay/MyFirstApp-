@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		693288891B8A00E40013C1F3 /* HomeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693288881B8A00E40013C1F3 /* HomeTableTableViewController.swift */; };
 		69E2B11B1B8052BD00CA24CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2B11A1B8052BD00CA24CA /* AppDelegate.swift */; };
 		69E2B11E1B8052BD00CA24CA /* MyFirstApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69E2B11C1B8052BD00CA24CA /* MyFirstApp.xcdatamodeld */; };
 		69E2B1201B8052BD00CA24CA /* ResisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2B11F1B8052BD00CA24CA /* ResisterViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		693288881B8A00E40013C1F3 /* HomeTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableTableViewController.swift; sourceTree = "<group>"; };
 		69E2B1151B8052BD00CA24CA /* MyFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E2B1191B8052BD00CA24CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E2B11A1B8052BD00CA24CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,8 +141,9 @@
 				69E2B11A1B8052BD00CA24CA /* AppDelegate.swift */,
 				69E2B16C1B8105C200CA24CA /* LoginViewController.swift */,
 				69E2B11F1B8052BD00CA24CA /* ResisterViewController.swift */,
-				69FC63DF1B817F7000386376 /* UploadViewController.swift */,
+				693288881B8A00E40013C1F3 /* HomeTableTableViewController.swift */,
 				69E2B1701B810FA300CA24CA /* homeCell.swift */,
+				69FC63DF1B817F7000386376 /* UploadViewController.swift */,
 				69E2B1211B8052BD00CA24CA /* Main.storyboard */,
 				69E2B1241B8052BD00CA24CA /* Images.xcassets */,
 				69E2B1261B8052BD00CA24CA /* LaunchScreen.xib */,
@@ -299,6 +302,7 @@
 				69FC63E01B817F7000386376 /* UploadViewController.swift in Sources */,
 				69E2B1711B810FA300CA24CA /* homeCell.swift in Sources */,
 				69E2B16D1B8105C200CA24CA /* LoginViewController.swift in Sources */,
+				693288891B8A00E40013C1F3 /* HomeTableTableViewController.swift in Sources */,
 				69E2B1201B8052BD00CA24CA /* ResisterViewController.swift in Sources */,
 				69E2B11E1B8052BD00CA24CA /* MyFirstApp.xcdatamodeld in Sources */,
 				69E2B11B1B8052BD00CA24CA /* AppDelegate.swift in Sources */,

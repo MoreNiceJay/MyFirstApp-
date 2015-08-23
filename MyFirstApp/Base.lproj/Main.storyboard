@@ -69,11 +69,61 @@
                         <outlet property="emailTextField" destination="oH6-N4-pZg" id="H9E-GO-nne"/>
                         <outlet property="passwordTextField" destination="weB-wH-GSW" id="R3G-6Y-2Tg"/>
                         <outlet property="usernameTextField" destination="0Ug-QU-Zvm" id="pA5-oE-LWG"/>
+                        <segue destination="pzD-G4-SS1" kind="show" identifier="resisterToHome" id="ufR-wp-aTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="511"/>
+            <point key="canvasLocation" x="228" y="349"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="4UF-8O-IuZ">
+            <objects>
+                <tableViewController id="1pp-q3-6dU" customClass="HomeTableTableViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="dAf-XL-EiH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="X4l-Vj-qD5" customClass="homeCell" customModule="MyFirstApp" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X4l-Vj-qD5" id="cyN-nY-dn2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yW3-Z4-Afw">
+                                            <rect key="frame" x="29" y="8" width="263" height="160"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1l-6m-Pd9">
+                                            <rect key="frame" x="29" y="170" width="263" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagePreview" destination="yW3-Z4-Afw" id="3TX-jw-jye"/>
+                                    <outlet property="labelPreviewTitle" destination="d1l-6m-Pd9" id="42O-R4-NU6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1pp-q3-6dU" id="aEq-nP-FXB"/>
+                            <outlet property="delegate" destination="1pp-q3-6dU" id="NVo-PC-Dyk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Home" id="awh-Ub-oW7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="f0C-sG-RMK">
+                            <connections>
+                                <segue destination="lZP-up-nFw" kind="show" id="Dna-Sp-QQm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgb-6a-us2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="511"/>
         </scene>
         <!--Upload View Controller-->
         <scene sceneID="zwC-dw-SIl">
@@ -122,11 +172,12 @@
                         <outlet property="uploadImageText" destination="qja-R9-IgM" id="05u-OZ-wol"/>
                         <outlet property="uploadMessage" destination="3gD-Dr-FyI" id="7jP-4B-IS5"/>
                         <outlet property="uploadPreviewImage" destination="Yex-wk-d2t" id="h0y-0j-7JA"/>
+                        <segue destination="1pp-q3-6dU" kind="show" identifier="goHomeFromUpload" id="RyA-Tk-S2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OxL-VI-Ve0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237" y="496"/>
+            <point key="canvasLocation" x="1506" y="511"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bun-eg-LQ6">
@@ -187,11 +238,35 @@
                     <connections>
                         <outlet property="passwordTextField" destination="2ak-3K-4CZ" id="MT1-we-pkc"/>
                         <outlet property="usernameTextField" destination="DTy-Bf-6yy" id="UWe-wq-ZSe"/>
+                        <segue destination="pzD-G4-SS1" kind="show" identifier="loginToHome" id="2C8-to-AmL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phx-om-WdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="511"/>
+            <point key="canvasLocation" x="228" y="972"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oR3-rB-aQX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pzD-G4-SS1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eYZ-nR-hqm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1pp-q3-6dU" kind="relationship" relationship="rootViewController" id="QNb-pA-md8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ikG-6m-0dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701" y="511"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ufR-wp-aTN"/>
+        <segue reference="RyA-Tk-S2A"/>
+    </inferredMetricsTieBreakers>
 </document>

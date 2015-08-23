@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
                     println(user)
                     
                     //로그인 성공 유저 홈으로
-                    self.performSegueWithIdentifier("goHomeFromLogin", sender: self)
+                    self.performSegueWithIdentifier("loginToHome", sender: self)
                     
                 }else {
                     

@@ -41,6 +41,8 @@ class ResisterViewController: UIViewController {
                 if error == nil {
                     //SUCCESS user signed up
                     println(isSuccesful)
+                    self.performSegueWithIdentifier("resisterToHome", sender: self)
+                    
                     println("레지스터: 가입성공")
                     
                 }else {

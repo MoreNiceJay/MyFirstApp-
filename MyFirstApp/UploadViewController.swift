@@ -16,6 +16,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var uploadImageText: UIButton!
     
     @IBAction func uploadImageFromSource(sender: AnyObject) {
+        
+        //이미지 고르게 하기
         var imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -23,67 +25,79 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.presentViewController(imagePicker, animated: true, completion: nil)
         
             }
+    
+    //고른 이미지를 이미지에 꼽아주기
         func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        uploadPreviewImage.image = image
-        self.dismissViewControllerAnimated(true, completion: nil)
         
-        uploadImageText.titleLabel?.text = "Change Pic"
+            uploadPreviewImage.image = image
+            self.dismissViewControllerAnimated(true, completion: nil)
+        
+            //버튼 이름 바꿔주기
+            uploadImageText.titleLabel?.text = "Change Pic"
     }
     
     @IBAction func uploadButton(sender: AnyObject) {
-        
         var imageText = uploadMessage.text
-        
-        if uploadPreviewImage.image == nil {
-            // image is not included alert user
+        if imageText == nil {
             
-        println("Image not uploaded")
+            println("업로드: 책 타이틀 빈칸")
             
             
-        }else {
-            
-            //이미지가 있을경우
+        }else {//타이틀이 있을경우
             var posts = PFObject(className: "Posts")
             posts["imageText"] = imageText
             posts["uploader"] = PFUser.currentUser()
             posts.saveInBackgroundWithBlock(){
                 (success: Bool, error: NSError?) -> Void in
-                
-                 if error == nil {
-            // success saving, now save image 저정 성공
-            
-                /**success saving, Now save image.***/
-                
-                //create an image data 이미지 데이터 만들기
-                var imageData = UIImagePNGRepresentation(self.uploadPreviewImage.image)
-                //create a parse file to store in cloud  파스로 하여금 파일을 클라우드로 업로드 하게 하기
+                if error == nil {
+                    //에러 없음
+                    
+                    //이미지 데이터 만들기
+                    var imageData = UIImagePNGRepresentation(self.uploadPreviewImage.image)
+                    
+                    //파스에다가 이름정해서 파일 올리기
                     
                     var parseImageFile = PFFile(name: "uploaded_image.png", data: imageData)
-                    //이 이름으로 파스에 저장
                     
                     posts["imageFile"] = parseImageFile
-                    posts.saveInBackgroundWithBlock({ (success : Bool, error:NSError?) -> Void in
-                        
+                    
+                    posts.saveInBackgroundWithBlock({ (success : Bool, error : NSError?) -> Void in
                         if error == nil {
-                            //take user home
-                            println("Data uploaded")
+                            
+                            println(success)
+                            println("업로드: 업로드 성공")
                             self.performSegueWithIdentifier("goHomeFromUpload", sender: self)
                             
+                            //유저를 홈으로 보내기
                             
-                        }else {
-                            println(error)
-                           }
-                    })
-                    }
-                
-            
-                
+                            //하고 업로드가 완료 됬다고 말해주기
+                        }
+                        }
+                    )
+                    
+                    
+                    
+                    
                 }
-            }
-        }
+              }
+        
+    }
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
-    
-    override func viewDidLoad() {
+                
+        
+        
+        
+        override func viewDidLoad() {
         super.viewDidLoad()
     }
     

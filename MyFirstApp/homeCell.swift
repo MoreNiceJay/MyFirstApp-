@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import Parse
 class homeCell : UITableViewCell {
     
+    @IBOutlet weak var imagePreview: UIImageView!
+    @IBOutlet weak var labelPreviewTitle: UILabel!
    
     override func awakeFromNib() {
         super.awakeFromNib()
